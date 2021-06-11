@@ -1,6 +1,7 @@
 #Import necessary libraries
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, jsonify
 import cv2
+import get_data as gd
 #Initialize the Flask app
 app = Flask(__name__)
 
@@ -19,8 +20,14 @@ def index():
 
 @app.route("/get_image/<img>")
 def get_predicted_image(img):
-    
+    image = gd.predicted_image(img)
     return redirect("/", code=302)
+
+@app.route("/api/v1.0/select_option")
+def get_selected_images():    
+    img_files = gd.get_sel_images()
+    return jsonify(img_files)
+
 
 
 

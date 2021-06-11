@@ -47,8 +47,8 @@
             <div class="col-md-3 p-0" style="background-color:rgb(153, 147, 147);">
               <div class="container set-height mt-5">
                 <h5 class= "sel_opt">Browse An Image</h5>
-                <div class="input-group py-6 bg-white shadow-sm" id ='file'>                                
-                  <input id="upload" type="file"  class="form-control border-1 h-100">
+                <div class="input-group py-6 bg-success shadow-sm" id ='file'>                                
+                  <input id="upload" type="file"  class="form-control border-1 h-100 bg-success">
                   <label id="upload-label" for="upload" class="font-weight-light text-muted"></label>
                 </div>                  
               </div>
@@ -56,7 +56,7 @@
                 <div >
                   <div class="container set-height">
                     <h5 class= "sel_opt">Select An Image</h5>
-                    <select id="image">
+                    <select id="images" class ="bg-success dropdown">
                     </select>
                   </div>
                 </div>
@@ -64,6 +64,10 @@
                 <div >
                   <div class="container set-height">
                     <h5 class= "sel_opt">Web Camera</h5>
+                    <p><a href="#" class="btn btn-success btn-lg">
+                      <i class="fa fa-camera" aria-hidden="true"></i> Camera
+                      </a>
+                    </p>
                   </div>
                 </div> 
             </div>
@@ -77,6 +81,15 @@
     </div>
     <!--container end -->
     
+<!-- Javascript files -->
+<!-- D3 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+ <!--Our javaScript file-->
+  <!---------------------------------------------->
+  <!-- Launch Page -->
+  <script src="/static/js/launch.js"></script>
+
 
 </body>
 </html>
