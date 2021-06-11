@@ -30,4 +30,13 @@ function renderImage() {
     var file = d3.selectAll('#images').node().value ;
     console.log(file);
 
+    // Render selected Image for prediction
+    d3.json(`/get_image/${file}`).then((data) => { 
+
+        console.log(data);
+
+    });
+
+
+
 }

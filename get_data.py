@@ -39,6 +39,7 @@ def predicted_image(img_file = "people1.jpg"):
     print(img_path)
     data = tm.prediction(img_path)
     print(data)
+    return data
 
 
 

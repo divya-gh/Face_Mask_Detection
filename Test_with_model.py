@@ -66,7 +66,7 @@ def prediction(path):
         print("No image")
 
     image_data = {
-            "prediction" : pred,
+            "prediction" : round(pred[0][0]*100),
             "Image_path" : predicted_path
     }
 
