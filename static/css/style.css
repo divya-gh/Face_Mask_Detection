@@ -1,0 +1,38 @@
+/* Browse Image */
+
+#file {
+    width: 230px;
+}
+#upload {
+    opacity: 6;
+    width: 100% !important;
+}
+
+#upload-label {
+    position: absolute;
+    top: 40%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.set-height {
+    position: relative;
+    height: 150px;
+    padding:20px;
+
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding: 12px;
+  pointer-events: none;
+  display: inline-block;
+  min-width: 15px; 
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
