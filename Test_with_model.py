@@ -73,7 +73,7 @@ def prediction(path):
     return image_data
 
 if __name__ == "__main__":
-    data = prediction("'./Resources/Experiment/people5.jpg'")
+    data = prediction("'./Images/erin_video_test.png'")
 
 
 

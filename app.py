@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index2.html')
+    return render_template('index.html')
 
 @app.route("/video_feed")
 def video_feed():
@@ -45,7 +45,10 @@ def get_selected_images():
     img_files = gd.get_sel_images()
     return jsonify(img_files)
 
-
+# @app.after_request
+# def apply_caching(response):
+#     response.headers["X-Frame-Options"] = "SAMEORIGIN"
+#     return response
 
 
 

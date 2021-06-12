@@ -25,6 +25,9 @@
 <!-- JQuery from google CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<!-- js -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+
 </head>
 
 
@@ -46,7 +49,7 @@
       <div class="card d-flex flex-row d-inline-block border-0">
       <div class=" d-flex flex-row d-inline-block m-5 set_card" id= "upload_Image">
       <div class="card set-card-width">
-        <a href="#" alt="select_Image"><img class="card-img-top p-md-2" src="/static/Images/select1.png"   width="100" height="130" alt="Card image cap"></a>
+        <a alt="select_Image" class="btn" data-toggle="collapse" href="#collapse-upload" role="button" aria-expanded="false" aria-controls="collapse-upload"><img class="card-img-top p-md-2" src="/static/Images/select1.png"   width="100" height="130" alt="Card image cap"></a>
         <div class="card-body p-0">
           <h4 class="card-title" style="font-size:18px;">SELECT</h4>
         </div>
@@ -55,7 +58,7 @@
       <!-- card 2 -->
       <div class="d-flex flex-row d-inline-block m-5 set_card" id= "browse_Image">
         <div class="card set-card-width">
-          <a href="#" alt="select_Image"><img class="card-img-top p-md-2" src="/static/Images/browse1.png" width="100" height="130" alt="Card image cap"></a>
+          <a alt="select_Image" class="btn" data-toggle="collapse" href="#collapse-browse" role="button" aria-expanded="false" aria-controls="collapse-browse"><img class="card-img-top p-md-2" src="/static/Images/browse1.png" width="100" height="130" alt="Card image cap"></a>
           <div class="card-body p-0">
             <h4 class="card-title" style="font-size:18px;">BROWSE</h4>
           </div>
@@ -64,7 +67,7 @@
         <!-- card3 -->
         <div class=" d-flex flex-row d-inline-block m-5 set_card">
           <div class="card set-card-width">
-            <a href="#" alt="select_Image"><img  id= "live_Image" class="card-img-top p-md-2" src="/static/Images/camera1.png" width="100" height="130" alt="Card image cap"></a>
+            <a alt="select_Image" class="btn" data-toggle="collapse" href="#collapse-video" role="button" aria-expanded="false" aria-controls="collapse-video"><img  id= "live_Image" class="card-img-top p-md-2" src="/static/Images/camera1.png" width="100" height="130" alt="Card image cap"></a>
             <div class="card-body p-0">
               <h4 class="card-title" style="font-size:18px;">CAMERA</h4>
             </div>
@@ -73,7 +76,7 @@
           <!-- card 4 -->
           <div class=" d-flex flex-row d-inline-block m-5 set_card" id= "analysis" >
             <div class="card set-card-width">
-              <a href="#" alt="select_Image"><img class="card-img-top p-md-2" src="/static/Images/analysis.png" width="100" height="130" alt="Card image cap"></a>
+              <a alt="select_Image" class="btn" data-toggle="collapse" href="#collapse-analysis" role="button" aria-expanded="false" aria-controls="collapse-analysis"><img class="card-img-top p-md-2" src="/static/Images/analysis.png" width="100" height="130" alt="Card image cap"></a>
               <div class="card-body p-0">
                 <h4 class="card-title" style="font-size:18px;">ANALYSIS</h4>
               </div>
@@ -82,7 +85,7 @@
             <!-- card5 -->
             <div class=" d-flex flex-row d-inline-block m-5 set_card" id= "find_us" >
               <div class="card set-card-width">
-                <a href="#" alt="select_Image"><img class="card-img-top p-md-2" src="/static/Images/find_us.png" width="100" height="130" alt="Card image cap"></a>
+                <a alt="select_Image" class="btn" data-toggle="collapse" href="#collapse-find-us" role="button" aria-expanded="false" aria-controls="collapse-find-us"><img class="card-img-top p-md-2" src="/static/Images/find_us.png" width="100" height="130" alt="Card image cap"></a>
                 <div class="card-body p-0">
                   <h4 class="card-title" style="font-size:18px;">FIND US</h4>
                 </div>
@@ -94,7 +97,45 @@
 
 <!-- row 3 -->
   <div class= "card" id="selected-option">
+    <div class="collapse" id = "collapse-video">
+      <div class = "card lg">
+      <div id = "livevideo" class="col-lg-8  offset-lg-2">
+        <h3 class="mt-5">Live Streaming</h3>
+        <img src="{{ url_for('video_feed') }}" width="100%">
+      </div>
+    </div>
+    </div>
+    <div class="collapse" id = "collapse-upload">
+      <div class = "card">
+        <div class="inputoutput">
+          <h3>Select an Image</h3>
+          <img id="imageSrc" alt="No Image" />
+          <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
+        </div>
+      <script type="text/javascript">
+      let imgElement = document.getElementById("imageSrc")
+      let inputElement = document.getElementById("fileInput");
+      inputElement.addEventListener("change", (e) => {
+        imgElement.src = URL.createObjectURL(e.target.files[0]);
+      }, false);
+      </script>
 
+    </div>
+    <div class="collapse" id = "collapse-browse">
+      <h3>Browse an Image</h3>
+    </div>
+    <div class="collapse" id = "collapse-analysis">
+      <h3>Analysis</h3>
+    </div>
+    <div class="collapse" id = "collapse-find-us">
+      <h3>Find Us</h3>
+    </div>
+
+  </div>
+
+  <!-- footer -->
+  <div class= "info text-center text-muted">
+    <p>Simple Footer</p>
   </div>
 
   <!-- row1 -->
@@ -150,7 +191,7 @@
   <!---------------------------------------------->
   <!-- Launch Page -->
   <script src="/static/js/launch.js"></script>
-  <!-- <script src="static/js/takepicture.js"></script> -->
+  <script src="/static/js/livevideo.js"></script>
 
 
 
