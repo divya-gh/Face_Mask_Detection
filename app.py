@@ -1,5 +1,5 @@
 #Import necessary libraries
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, jsonify
 import cv2
 # import imutils
 from genframes import gen_frames, capture_img
@@ -7,6 +7,7 @@ from facemask_test import test_img
 import pickle
 
 
+import get_data as gd
 #Initialize the Flask app
 app = Flask(__name__)
 
@@ -31,9 +32,15 @@ def capture():
 
 @app.route("/get_image/<img>")
 def get_predicted_image(img):
-    
-    
-    return redirect("/", code=302)
+    data = gd.predicted_image(img)
+    print(data)
+    return jsonify(data)
+
+@app.route("/api/v1.0/select_option")
+def get_selected_images():    
+    img_files = gd.get_sel_images()
+    return jsonify(img_files)
+
 
 
 
