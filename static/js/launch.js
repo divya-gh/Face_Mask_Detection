@@ -1,3 +1,18 @@
+//===============================================================================//
+// Function to Initialize launch page
+//===============================================================================//
+
+function init() {
+    // Render selected Image for prediction
+    d3.json(`/get_image/people1.jpg`).then((data) => { 
+        console.log(data);
+
+    });
+}
+
+// call init function
+init();
+
 //===================================================================================//
 //    Create events for the selection option on the main page
 //==================================================================================//
@@ -66,6 +81,10 @@ function createRadioButtons(data) {
         // Render selected Image for prediction
         d3.json(`/get_image/${value}`).then((data) => { 
             console.log(data);
+
+            var image_selector = d3.select("#predict_image")
+            console.log(image_selector)
+            image_selector.attr("src" , `${data.Image_path}`)
 
         });
         }) ;

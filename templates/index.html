@@ -34,7 +34,7 @@
   <div class="container-fluid hero-image flex-grow-1">
     <div class="hero-text">
       <h1 style="font-size:50px">Face Mask Detection</h1>
-      <a href="#" alt=mask_icon><img class="set_image" src="/static/Images/1.png"></a>
+      <a href="/" alt=mask_icon><img id="reset" class="set_image" src="/static/Images/1.png"></a>
       <h4>Are you wearing a facemask?</h4>      
     </div>
   </div>
@@ -100,6 +100,25 @@
     </div>
   </div>
 </div>
+
+<!-- Create a row for Image Display -->
+<div class="container-fluid" style="background-color:rgb(39, 37, 37);">
+  <div class="row">        
+    <div class="col-12 text-center">
+      <h3 class="text-light text-center">Prediction Result</h3> 
+      <div class="container">
+        <div>
+          <img id="predict_image" class="image-fluid w-100" src="./static/images/default_prediction.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
   <!-- row1 -->
     <div class="container-fluid">

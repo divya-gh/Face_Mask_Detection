@@ -99,6 +99,39 @@ body {
 
   /* ------------------------------------------------------------------- */
 
+/* When your screen as more than 800px */
+@media screen and (min-width: 800px) { 
+
+
+    .radios {
+        position: relative;
+        left: 50px;
+        top: 25px;
+        margin-left: 5px !important;
+        font-weight: bold;
+        height:25px;
+    }
+}
+
+
+/* When your screen as more than 1000px */
+@media screen and (min-width: 1000px) { 
+    .set_div_height {
+        height:100px;
+        width:100%;
+        border:1px solid black;
+        border-right: none;
+    }
+
+    .radios {
+        position: relative;
+        left: 50px;
+        top: 25px;
+        margin-left: 50px !important;
+        font-weight: bold;
+        height:25px;
+    }
+}
 
 
 
@@ -113,14 +146,16 @@ body {
     }
 
     .set_div_height {
-        height: 100px;
+        height:80px;
+        border:1px solid black;
+        
     }
 
     .radios {
         position: relative;
-        left: 50px;
+        left: 70px;
         top: 25px;
-        margin-left: 30px !important;
+        margin-left: 50px !important;
         font-weight: bold;
         height:25px;
     }
@@ -136,9 +171,9 @@ body {
 
     .radios {
         position: relative;
-        left: 100px;
+        left: 90px;
         top: 25px;
-        margin-left: 100px !important;
+        margin-left: 70px !important;
         font-weight: bold;
         height:25px;
     }
@@ -150,6 +185,15 @@ body {
  @media screen and (min-width: 1600px) { 
     .set_card {
          margin-left: 150px !important; 
+    }
+    
+    .radios {
+        position: relative;
+        left: 90px;
+        top: 25px;
+        margin-left: 90px !important;
+        font-weight: bold;
+        height:25px;
     }
 }
 

@@ -41,6 +41,7 @@ def prediction(path):
         new_img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR) #colored output image
         
         # For every face found,   
+        predict_result =[]
         for i in range(len(faces)):
             (x,y,w,h) = faces[i]
             crop = new_img[y:y+h,x:x+w]
@@ -48,20 +49,21 @@ def prediction(path):
             crop = np.reshape(crop,[1,128,128,3])/255.0        
             mask_result = model.predict(crop)
             #print(color_label[round(mask_result[0][0])])
+            predict_result.append(round(mask_result[0][0]))
 
-            cv2.putText(new_img,mask_label[round(mask_result[0][0])],(x, y-10), cv2.FONT_HERSHEY_SIMPLEX,2,color_label[round(mask_result[0][0])],3)
+            cv2.putText(new_img,mask_label[round(mask_result[0][0])],(x, y-10), cv2.FONT_HERSHEY_SIMPLEX,1.8,color_label[round(mask_result[0][0])],2)
             cv2.rectangle(new_img,(x,y),(x+w,y+h), color_label[round(mask_result[0][0])],3)
         
         plt.figure(figsize=(10,10))
         plt.imshow(new_img)
         predicted_path = "./static/Images/predicted_image.jpg"
-        plt.savefig(predicted_path)
+        plt.savefig(predicted_path,bbox_inches='tight')
             
     else:
         print("No image")
 
     image_data = {
-            "prediction" : round(pred[0][0]*100),
+            "prediction" : predict_result,
             "Image_path" : predicted_path
     }
 
