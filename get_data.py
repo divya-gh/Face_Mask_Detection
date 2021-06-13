@@ -32,13 +32,13 @@ def get_sel_images():
     return images
 
 # predict  function   
-def predicted_image(img_file = "people1.jpg"):
-    print(img_file)
+def predicted_image(img_file ="people1.jpg"):
+    #print("img_file", img_file)
     base_path = "./Resources/Experiment/"
     img_path = base_path +  img_file
-    print(img_path)
+    #print("path:", img_path)
     data = tm.prediction(img_path)
-    print(data)
+    #print("data", data)
     return data
 
 
@@ -51,4 +51,4 @@ if __name__ == "__main__":
    
     images = get_sel_images()
     #print(images)
-    img_file = predicted_image("people5.jpg")
+    img_file = predicted_image("people1.jpg")

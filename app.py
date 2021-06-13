@@ -20,14 +20,18 @@ def index():
 
 @app.route("/get_image/<img>")
 def get_predicted_image(img):
+    print("image file rendered:",img)
     data = gd.predicted_image(img)
-    print(data)
+    print(jsonify(data))
     return jsonify(data)
 
 @app.route("/api/v1.0/select_option")
 def get_selected_images():    
     img_files = gd.get_sel_images()
     return jsonify(img_files)
+
+
+
 
 
 

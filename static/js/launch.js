@@ -1,42 +1,83 @@
- 
-// Render Images to select upon Launch
-//-------------------------------------//
+//===================================================================================//
+//    Create events for the selection option on the main page
+//==================================================================================//
 
-// Grab a reference to the dropdown select element
-var selector = d3.select("#images");
 
-// Make an API call to server to population the selection option with set of Images
+// JQery - trigger events for links
 
-d3.json("/api/v1.0/select_option").then((data) => { 
-    var samples = data ;
+$(document).ready(function(){
+    $("a").trigger("click");
+    
 
-    console.log(samples);
-    data.forEach(file => {
-        selector.append("option")
-                .attr("value", file)
-                .text(file)
-    });
+    $(document).on("click", "#select", function(){
+        console.log($(this).attr("id"));
+
+        // Make an API call to server to population the selection option with set of Images
+
+    d3.json("/api/v1.0/select_option").then((data) => { 
+        var samples = data ;
+
+        console.log(samples);
+
+        createRadioButtons(data);
 
 });
 
+// D3 to create radio buttons
+function createRadioButtons(data) {
+    //clear previous svg data
+    d3.select("div#select_option").html("")
 
-//On selection of a file, call the function renderImage to render the image for processing   
-d3.select("#images").on("change", renderImage) ;
+    // Experiment
+    var selection = d3.select("#select_option").classed("set_div_height", true)
 
-// Function renderImage 
+    var form = selection.append('form');
 
-function renderImage() {
-    //Get options selected by the user
-    var file = d3.selectAll('#images').node().value ;
-    console.log(file);
+    radiogroup = form.selectAll("radios").data(data).enter()
+        .append('g').classed("radios" , true) ;
 
-    // Render selected Image for prediction
-    d3.json(`/get_image/${file}`).then((data) => { 
+    // Append input elements and text to each radioGroup
+    var j=0;
+    radiogroup.append('input')
+              .attr('type', 'radio')
+              .attr('value', d => d)
+              .attr('name', 'toggle')
+            //   .on('click', function () {
+            //       //Do something
+            //   });
+            .property("checked", function(d, i) { 
+                return (i===j); 
+            })
 
-        console.log(data);
+    // Assign labels to radio button group
+    radiogroup.append('label')
+              .text(d =>d)
+              .style("padding", "3px");
 
-    });
+    //------------------------------------------------------------//
+    //Event Handlling with Radio buttons//
+    //-----------------------------------------------------------//
+
+    //When a button is clicked,
+    d3.selectAll("input").on("click" , () => {
+        var value = d3.select('input[name="toggle"]:checked').node().value
+        console.log(value)
+
+        // Render selected Image for prediction
+        d3.json(`/get_image/${value}`).then((data) => { 
+            console.log(data);
+
+        });
+        }) ;
+    // End of button click
+        } //end of createRadioButtons function
+
+        });
+    });//end of Jquery
 
 
 
-}
+
+
+
+

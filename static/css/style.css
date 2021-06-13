@@ -30,7 +30,7 @@ body {
 .hero-image {
     background-image: url("/static/Images/background.jpeg");
     background-color: #cccccc;
-    height: 500px;
+    height: 520px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,25 +66,60 @@ body {
     /* left:8em; */
      width:100px !important;
 }
+/* Set selection option div container */
+.set_div_height {
+    height:80px;
+    width:100%;
+    border:1px solid black;
+}
+
+
+/* Radio button css */
+
+.radios {
+    position: relative;;
+    left: 100px;
+    top: 27px;
+    margin-left: 50px !important;
+    font-weight: bold;
+    height:25px;
+}
+
+
 
   /* ------------------------------------------------------------------- */
 
-/* When your screen as more than 1550px */
+
+
+
+/* When your screen as more than 1200px */
 @media screen and (min-width: 1200px) { 
     .set_card {
-        /* position: relative;; */
-        /* left:8em; */
-         margin-left: 150px !important; 
+         margin-left: 100px !important; 
     }
 
     .set-card-width {
-        /* position: relative;; */
-        /* left:8em; */
-         width:120px !important;
+         width:110px !important;
     }
 
 
 }
+
+ /* When your screen as more than 1400px */ 
+ @media screen and (min-width: 1400px) { 
+    .set_card {
+         margin-left: 150px !important; 
+    }
+}
+
+ /* When your screen as more than 1450px */ 
+ @media screen and (min-width: 1600px) { 
+    .set_card {
+         margin-left: 170px !important; 
+    }
+}
+
+
 /* When your screen as less than 1550px */
 @media screen and (max-width: 800px) { 
     .set-card-width {

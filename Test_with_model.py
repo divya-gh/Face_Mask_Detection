@@ -33,15 +33,10 @@ def prediction(path):
     faces = face_model.detectMultiScale(img,scaleFactor=1.1, minNeighbors=4)
     
     #check for no. of faces in the image
-    # if more than one face found, check if they are social distancing (extra code)
+    # if more than one face found,
     if len(faces)>=1:
         label = [0 for i in range(len(faces))]
-        for i in range(len(faces)-1):
-            for j in range(i+1, len(faces)):
-                dist = distance.euclidean(faces[i][:2],faces[j][:2])
-                if dist<MIN_DISTANCE:
-                    label[i] = 1
-                    label[j] = 1
+
         # convert Image to color for rescaling and predicton
         new_img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR) #colored output image
         
