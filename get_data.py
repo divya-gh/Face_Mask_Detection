@@ -13,7 +13,8 @@ import Test_with_model as tm
 
 # Function to load images from the folder
 def load_images_from_folder(folder):
-    img_files = []
+    # Get files from the folder
+    img_file =[]
     for filename in os.listdir(folder):
         img_files.append(filename)
     return img_files
@@ -34,7 +35,11 @@ def get_sel_images():
 # predict  function   
 def predicted_image(img_file ="people1.jpg"):
     #print("img_file", img_file)
-    base_path = "./Resources/Experiment/"
+    experiment_images = ["people1.jpg", "people2.jpg", "people3.jpg", "people4.jpg", "people5.jpg", "people6.jpg", "people7.jpg"]
+    if img_file not in experiment_images:
+        base_path = "./Resources/UploadPic/"
+    else:
+        base_path = "./Resources/Experiment/"
     img_path = base_path +  img_file
     #print("path:", img_path)
     data = tm.prediction(img_path)

@@ -81,8 +81,15 @@ body {
     height:80px;
     width:100%;
     border:1px solid black;
+    text-align: center;
 }
 
+.set_browse_height {
+    height:120px;
+    width:100%;
+    border:1px solid black;
+    text-align: center;
+}
 
 /* Radio button css */
 
@@ -95,7 +102,24 @@ body {
     height:25px;
 }
 
+/* Browse option css */
 
+.set-browse {
+    position: relative;
+    top:10px;
+    left:30vw;
+    height:40px;
+    font-weight: bold;
+    color:white;
+    background-color:rgb(144, 180, 144) !important;
+    border-color:rgb(119, 190, 238);
+    border-width:2px;
+}
+
+#note {
+    position: relative;
+    top:20px;
+}
 
   /* ------------------------------------------------------------------- */
 

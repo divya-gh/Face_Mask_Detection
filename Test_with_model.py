@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 face_model = cv2.CascadeClassifier('./Resources/haarcascade_frontalface_default.xml')
-model = load_model("./Saved_Model/keras_model.hdf5")
+model = load_model("./Saved_Model/Best/keras_model.hdf5")
 
 def prediction(path):
     # get Image from the path rendered
@@ -58,14 +58,18 @@ def prediction(path):
         plt.imshow(new_img)
         predicted_path = "./static/Images/predicted_image.jpg"
         plt.savefig(predicted_path,bbox_inches='tight')
+
+        # create a dictionary of results
+        image_data = {
+            "prediction" : predict_result,
+            "Image_path" : predicted_path
+        }
             
     else:
         print("No image")
+        image_data = { "Prediction": "No Image"}
 
-    image_data = {
-            "prediction" : predict_result,
-            "Image_path" : predicted_path
-    }
+
 
     return image_data
 

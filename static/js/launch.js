@@ -5,7 +5,7 @@
 function init() {
     // Render selected Image for prediction
     d3.json(`/get_image/people1.jpg`).then((data) => { 
-        console.log(data);
+        console.log("Default Prediction Data:", data);
 
     });
 }
@@ -14,7 +14,7 @@ function init() {
 init();
 
 //===================================================================================//
-//    Create events for the selection option on the main page
+//    Create events for the SELECTION option on the main page
 //==================================================================================//
 
 
@@ -22,77 +22,153 @@ init();
 
 $(document).ready(function(){
     $("a").trigger("click");
+
+    // Function to render Predicted Image
+    //===================================//
+
+    renderPredictedImage = (file) => {
+                    // Render selected Image for prediction
+                    d3.json(`/get_image/${file}`).then((data) => { 
+                        console.log("Prediction Data:", data);
+        
+                        var image_selector = d3.select("#predict_image")
+                        image_selector.attr("src" , `${data.Image_path}`)
+        
+                    });
+            }
     
 
     $(document).on("click", "#select", function(){
-        console.log($(this).attr("id"));
+        console.log("You clicked the option:", $(this).attr("id"));
+
+        //Get deafault image prediction
+        renderPredictedImage("people1.jpg");
 
         // Make an API call to server to population the selection option with set of Images
+        d3.json("/api/v1.0/select_option").then((data) => { 
+            var samples = data ;
 
-    d3.json("/api/v1.0/select_option").then((data) => { 
-        var samples = data ;
+            console.log("data for creating radio buttons:", samples);
 
-        console.log(samples);
-
-        createRadioButtons(data);
-
-});
-
-// D3 to create radio buttons
-function createRadioButtons(data) {
-    //clear previous svg data
-    d3.select("div#select_option").html("")
-
-    // Experiment
-    var selection = d3.select("#select_option").classed("set_div_height", true)
-
-    var form = selection.append('form');
-
-    radiogroup = form.selectAll("radios").data(data).enter()
-        .append('g').classed("radios" , true) ;
-
-    // Append input elements and text to each radioGroup
-    var j=0;
-    radiogroup.append('input')
-              .attr('type', 'radio')
-              .attr('value', d => d)
-              .attr('name', 'toggle')
-            //   .on('click', function () {
-            //       //Do something
-            //   });
-            .property("checked", function(d, i) { 
-                return (i===j); 
-            })
-
-    // Assign labels to radio button group
-    radiogroup.append('label')
-              .text(d =>d)
-              .style("padding", "3px");
-
-    //------------------------------------------------------------//
-    //Event Handlling with Radio buttons//
-    //-----------------------------------------------------------//
-
-    //When a button is clicked,
-    d3.selectAll("input").on("click" , () => {
-        var value = d3.select('input[name="toggle"]:checked').node().value
-        console.log(value)
-
-        // Render selected Image for prediction
-        d3.json(`/get_image/${value}`).then((data) => { 
-            console.log(data);
-
-            var image_selector = d3.select("#predict_image")
-            console.log(image_selector)
-            image_selector.attr("src" , `${data.Image_path}`)
+            createRadioButtons(data);
 
         });
+
+    // D3 to create radio buttons
+    function createRadioButtons(data) {
+        //clear previous svg data
+        d3.select("div#select_option").html("")
+
+        // set class
+        var selection = d3.select("#select_option").classed("set_div_height", true)
+
+        var form = selection.append('form');
+
+        radiogroup = form.selectAll("radios").data(data).enter()
+            .append('g').classed("radios" , true) ;
+
+        // Append input elements and text to each radioGroup
+        var j=0;
+        radiogroup.append('input')
+                  .attr('type', 'radio')
+                  .attr('value', d => d)
+                  .attr('name', 'toggle')
+                //   .on('click', function () {
+                //       //Do something
+                //   });
+                .property("checked", function(d, i) { 
+                    return (i===j); 
+                })
+
+        // Assign labels to radio button group
+        radiogroup.append('label')
+                  .text(d =>d)
+                  .style("padding", "3px");
+
+        //------------------------------------------------------------//
+        //Event Handlling with Radio buttons//
+        //-----------------------------------------------------------//
+
+        //When a button is clicked,
+        d3.selectAll("input").on("click" , () => {
+
+            // get selected file
+            var value = d3.select('input[name="toggle"]:checked').node().value
+            console.log(value)
+
+            renderPredictedImage(value)
         }) ;
-    // End of button click
-        } //end of createRadioButtons function
+        // End of Radiobutton click
+    } //end of createRadioButtons function
 
-        });
-    });//end of Jquery
+    }); //End of Selection on click
+    
+
+
+//===================================================================================//
+//    Create events for the SELECTION option on the main page
+//==================================================================================//
+        $(document).on("click", "#browse", function(){
+            //print clicked option
+            console.log("You clciked the option:", $(this).attr("id"));
+
+            //clear previous row data
+            d3.select("div#select_option").html("")
+
+            // set class
+            var selection = d3.select("#select_option").classed("set_browse_height", true).classed("set_div_height", false)
+            
+            // set input form
+            var inputForm = '<label for="formFileSm" class="form-label h6 m-0">Upload a picture with maximum neighbours = 3 <br><span style="font-size:13px;"> ( File Format: .jpg, .png )</span> </label><input class="form-control form-control-sm set-browse rounded-lg w-50" id="myFile" type="file" /><h6 id="note" style="font-size:13px;">Note: Save your pictures in <em>UploadPic</em> folder.</h6>'
+            var browseForm = selection.html(inputForm)
+            
+            //enent handing : get value on file upload
+            browseForm.on("change" , () => {
+                console.log("get browsed file:", d3.event.target.value)
+
+                // get uploaded file path
+                var file = d3.event.target.value ;
+                console.log("Uploaded file:", file.split("\\")[2])
+
+                var uploaded_File = file.split("\\")[2] ;
+
+                renderPredictedImage(uploaded_File);
+
+            });  //End of browForm on change
+
+        });//End of Browse selection option
+
+
+
+
+    //===================================================================================//
+    //    Create events for the SELECTION option on the main page
+    //==================================================================================//
+
+    $(document).on("click", "#camera", function(){
+        //print clicked option
+        console.log("You clciked the option:", $(this).attr("id"));
+
+        //clear previous row data
+        d3.select("div#select_option").html("").classed("set_browse_height set_div_height" , false)
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+});//end of Jquery
+
+
+
 
 
 
