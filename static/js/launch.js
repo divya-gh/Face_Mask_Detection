@@ -119,7 +119,7 @@ $(document).ready(function(){
             var selection = d3.select("#select_option").classed("set_browse_height", true).classed("set_div_height", false)
             
             // set input form
-            var inputForm = '<label for="formFileSm" class="form-label h6 m-0">Upload a picture with maximum neighbours = 3 <br><span style="font-size:13px;"> ( File Format: .jpg, .png )</span> </label><input class="form-control form-control-sm set-browse rounded-lg w-50" id="myFile" type="file" /><h6 id="note" style="font-size:13px;">Note: Save your pictures in <em>UploadPic</em> folder.</h6>'
+            var inputForm = '<label for="formFileSm" class="form-label h6 m-0">Upload a picture with maximum neighbours = 3 <br><span style="font-size:13px;"> ( File Format: .jpg, .png )</span> </label><input class="form-control form-control-sm set-browse rounded-lg w-50" id="myFile" type="file" /><h6 id="note" style="font-size:13px;">Note: Save your pictures in the<em>UploadPic</em> folder.</h6>'
             var browseForm = selection.html(inputForm)
             
             //enent handing : get value on file upload

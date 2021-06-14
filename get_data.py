@@ -14,7 +14,7 @@ import Test_with_model as tm
 # Function to load images from the folder
 def load_images_from_folder(folder):
     # Get files from the folder
-    img_file =[]
+    img_files = []
     for filename in os.listdir(folder):
         img_files.append(filename)
     return img_files
@@ -41,7 +41,7 @@ def predicted_image(img_file ="people1.jpg"):
     else:
         base_path = "./Resources/Experiment/"
     img_path = base_path +  img_file
-    #print("path:", img_path)
+    print("path:", img_path)
     data = tm.prediction(img_path)
     #print("data", data)
     return data
