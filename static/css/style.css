@@ -67,6 +67,7 @@ body {
   }
 
 
+
   .set_card {
     margin-left: 100px !important; 
 }
@@ -120,6 +121,22 @@ body {
 #note {
     position: relative;
     top:20px;
+}
+
+/* find-US settings */
+
+.find-card {
+    position: relative;
+    width: 120px;
+    height: 160px;
+    font-weight: bold;  
+    margin-left: 50px;  
+    margin-right:50px;
+}
+
+.set-posi-findus {
+    margin-top:100px;
+    margin-bottom:100px;
 }
 
   /* ------------------------------------------------------------------- */
@@ -240,6 +257,15 @@ body {
         margin-left: 10px !important;
         font-weight: bold;
         height:25px;
+    }
+
+    .box1 {
+        overflow:auto;
+    }
+
+    .find-card {
+        position: relative;
+      left:200px;
     }
 
 }
