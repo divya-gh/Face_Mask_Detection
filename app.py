@@ -36,8 +36,9 @@ def video_feed():
 
 @app.route("/get_image/<img>")
 def get_predicted_image(img):
+    print("image file rendered:",img)
     data = gd.predicted_image(img)
-    print(data)
+    print(jsonify(data))
     return jsonify(data)
 
 @app.route("/api/v1.0/select_option")
@@ -49,6 +50,9 @@ def get_selected_images():
 # def apply_caching(response):
 #     response.headers["X-Frame-Options"] = "SAMEORIGIN"
 #     return response
+
+
+
 
 
 

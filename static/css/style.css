@@ -26,11 +26,15 @@ body {
     padding:20px;
 
 }
+.row1 {
+    flex-direction: row
+}
+
 
 .hero-image {
     background-image: url("/static/Images/background.jpeg");
     background-color: #cccccc;
-    height: 500px;
+    height: 520px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,9 +61,16 @@ body {
  
 
   .box {
-      overflow: auto;
+      overflow-x: scroll;
+      overflow-y: hidden;
       /* font-size:2vw; */
   }
+
+
+
+  .set_card {
+    margin-left: 100px !important; 
+}
 
   .set-card-width {
     /* position: relative;; */
@@ -67,28 +78,221 @@ body {
      width:100px !important;
 }
 
+/* Set selection option div container */
+.set_div_height {
+    height:80px;
+    width:100%;
+    border:1px solid black;
+    text-align: center;
+}
+
+.set_browse_height {
+    height:120px;
+    width:100%;
+    border:1px solid black;
+    text-align: center;
+}
+
+/* Radio button css */
+
+.radios {
+    position: relative;
+    left: 100px;
+    top: 27px;
+    margin-left: 50px !important;
+    font-weight: bold;
+    height:25px;
+}
+
+/* Browse option css */
+
+.set-browse {
+    position: relative;
+    top:10px;
+    left:30vw;
+    height:40px;
+    font-weight: bold;
+    color:white;
+    background-color:rgb(144, 180, 144) !important;
+    border-color:rgb(119, 190, 238);
+    border-width:2px;
+}
+
+#note {
+    position: relative;
+    top:20px;
+}
+
+/* find-US settings */
+.line-set {
+    position: relative;
+    margin-left:500px;
+    margin-right:450px;
+
+
+}
+
+.find-card {
+    position: relative;
+    width: 120px;
+    height: 160px;
+    font-weight: bold;  
+    margin-left: 50px;  
+    margin-right:50px;
+}
+
+.set-posi-findus {
+    margin-top:80px;
+    margin-bottom:100px;
+}
+
+/* fa bounce */
+.bounce {
+    display: inline-block;
+    position: relative;
+    -moz-animation: bounce 0.5s infinite linear;
+    -o-animation: bounce 0.5s infinite linear;
+    -webkit-animation: bounce 0.5s infinite linear;
+    animation: bounce 0.5s infinite linear;
+    color:000;
+  }
+
+  @-webkit-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+  
   /* ------------------------------------------------------------------- */
 
-/* When your screen as more than 1550px */
+/* When your screen as more than 800px */
+@media screen and (min-width: 800px) { 
+
+
+    .radios {
+        position: relative;
+        left: 50px;
+        top: 25px;
+        margin-left: 5px !important;
+        font-weight: bold;
+        height:25px;
+    }
+}
+
+
+/* When your screen as more than 1000px */
+@media screen and (min-width: 1000px) { 
+    .set_div_height {
+        height:100px;
+        width:100%;
+        border:1px solid black;
+        border-right: none;
+    }
+
+    .radios {
+        position: relative;
+        left: 50px;
+        top: 25px;
+        margin-left: 50px !important;
+        font-weight: bold;
+        height:25px;
+    }
+}
+
+
+
+/* When your screen as more than 1200px */
 @media screen and (min-width: 1200px) { 
     .set_card {
-        /* position: relative;; */
-        /* left:8em; */
-         margin-left: 150px !important; 
+         margin-left: 100px !important; 
     }
 
     .set-card-width {
-        /* position: relative;; */
-        /* left:8em; */
-         width:120px !important;
+         width:110px !important;
+    }
+
+    .set_div_height {
+        height:80px;
+        border:1px solid black;
+        
+    }
+
+    .radios {
+        position: relative;
+        left: 70px;
+        top: 25px;
+        margin-left: 50px !important;
+        font-weight: bold;
+        height:25px;
     }
 
 
 }
+
+ /* When your screen as more than 1400px */ 
+ @media screen and (min-width: 1400px) { 
+    .set_card {
+         margin-left: 120px !important; 
+    }
+
+    .radios {
+        position: relative;
+        left: 90px;
+        top: 25px;
+        margin-left: 70px !important;
+        font-weight: bold;
+        height:25px;
+    }
+
+
+}
+
+ /* When your screen as more than 1450px */ 
+ @media screen and (min-width: 1600px) { 
+    .set_card {
+         margin-left: 170px !important; 
+    }
+    
+    .radios {
+        position: relative;
+        left: 90px;
+        top: 25px;
+        margin-left: 90px !important;
+        font-weight: bold;
+        height:25px;
+    }
+}
+
+
 /* When your screen as less than 1550px */
 @media screen and (max-width: 800px) { 
     .set-card-width {
-         width:100px !important;
+         width:90px !important;
+    }
+
+    .set_div_height {
+        height: 110px;
+    }
+
+    .radios {
+        position: relative;
+        left: 10px;
+        top: 20px;
+        margin-left: 10px !important;
+        font-weight: bold;
+        height:25px;
+    }
+
+    .box1 {
+        overflow:auto;
+    }
+
+    .find-card {
+        position: relative;
+      left:200px;
     }
 
 }
+
+

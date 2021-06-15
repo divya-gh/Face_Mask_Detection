@@ -31,13 +31,13 @@
 </head>
 
 
-<body>
+<body class="border border-dark boder-1">
 
 <!-- row1 -->
   <div class="container-fluid hero-image flex-grow-1">
     <div class="hero-text">
       <h1 style="font-size:50px">Face Mask Detection</h1>
-      <a href="#" alt=mask_icon><img class="set_image" src="/static/Images/1.png"></a>
+      <a href="/" alt=mask_icon><img id="reset" class="set_image" src="/static/Images/1.png"></a>
       <h4>Are you wearing a facemask?</h4>      
     </div>
   </div>
@@ -45,11 +45,19 @@
   <!-- row 2 -->
   <!-- selection options -->
   <div class="container-fluid box text-center">
+<<<<<<< HEAD
     <div class="row">
       <div class="card d-flex flex-row d-inline-block border-0">
       <div class=" d-flex flex-row d-inline-block m-5 set_card" id= "upload_Image">
       <div class="card set-card-width">
         <a alt="select_Image" class="btn" data-toggle="collapse" href="#collapse-upload" role="button" aria-expanded="false" aria-controls="collapse-upload"><img class="card-img-top p-md-2" src="/static/Images/select1.png"   width="100" height="130" alt="Card image cap"></a>
+=======
+    <div class="row flex-nowrap">
+      <div class="card d-flex flex-nowrap  d-inline-block border-0" style="display:inline-block;"></div>
+      <div class="d-flex flex-nowrap d-inline-block mt-3 ml-5 mr-5 mb-3 margin-set set_card" style="display:inline-block;">
+      <div class="card set-card-width">
+        <a href="#" alt="select_Image"><img id="select" class="card-img-top p-2" src="/static/Images/select1.png"   width="100" height="130" alt="Card image cap"></a>
+>>>>>>> main
         <div class="card-body p-0">
           <h4 class="card-title" style="font-size:18px;">SELECT</h4>
         </div>
@@ -65,7 +73,7 @@
         </div>
         </div>
         <!-- card3 -->
-        <div class=" d-flex flex-row d-inline-block m-5 set_card">
+        <div class="d-flex flex-nowrap d-inline-block mt-3 ml-5 mr-5 mb-3 set_card" style="display:inline-block;">
           <div class="card set-card-width">
             <a alt="select_Image" class="btn" data-toggle="collapse" href="#collapse-video" role="button" aria-expanded="false" aria-controls="collapse-video"><img  id= "live_Image" class="card-img-top p-md-2" src="/static/Images/camera1.png" width="100" height="130" alt="Card image cap"></a>
             <div class="card-body p-0">
