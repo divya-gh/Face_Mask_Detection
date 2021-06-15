@@ -3,6 +3,12 @@
 //===============================================================================//
 
 function init() {
+    //Ensure result is displayed 
+    d3.select("#predict").style("display","block");
+
+    //Make analysis report invisible
+    d3.select("#analyze").style("display","none");
+
     // Render selected Image for prediction
     d3.json(`/get_image/people1.jpg`).then((data) => { 
         console.log("Default Prediction Data:", data);
@@ -41,8 +47,16 @@ $(document).ready(function(){
     $(document).on("click", "#select", function(){
         console.log("You clicked the option:", $(this).attr("id"));
 
+        //Ensure result is displayed 
+        d3.select("#predict").style("display","block");
+
+        //Make analysis report invisible
+         d3.select("#analyze").style("display","none");
+
         //Get deafault image prediction
-        renderPredictedImage("people1.jpg");
+        // renderPredictedImage("people1.jpg");
+        var image_selector = d3.select("#predict_image")
+            image_selector.attr("src" , `./static/images/default_prediction.jpg`)
 
         // Make an API call to server to population the selection option with set of Images
         d3.json("/api/v1.0/select_option").then((data) => { 
@@ -106,11 +120,16 @@ $(document).ready(function(){
 
 
 //===================================================================================//
-//    Create events for the SELECTION option on the main page
+//    Create events for the BROWSE option on the main page
 //==================================================================================//
         $(document).on("click", "#browse", function(){
             //print clicked option
-            console.log("You clciked the option:", $(this).attr("id"));
+            console.log("You clicked the option:", $(this).attr("id"));
+            //Ensure result is displayed 
+            d3.select("#predict").style("display","block");
+
+            //Make analysis report invisible
+            d3.select("#analyze").style("display","none");
 
             //clear previous row data
             d3.select("div#select_option").html("")
@@ -132,7 +151,13 @@ $(document).ready(function(){
 
                 var uploaded_File = file.split("\\")[2] ;
 
-                renderPredictedImage(uploaded_File);
+                // get prediction only if file name is not undefined
+                if (uploaded_File != undefined) {
+
+                    renderPredictedImage(uploaded_File);
+                }
+
+                
 
             });  //End of browForm on change
 
@@ -142,12 +167,18 @@ $(document).ready(function(){
 
 
     //===================================================================================//
-    //    Create events for the SELECTION option on the main page
+    //    Create events for the CAMERA option on the main page
     //==================================================================================//
 
     $(document).on("click", "#camera", function(){
         //print clicked option
-        console.log("You clciked the option:", $(this).attr("id"));
+        console.log("You clicked the option:", $(this).attr("id"));
+
+        //Ensure result is displayed 
+        d3.select("#predict").style("display","block");
+
+        //Make analysis report invisible
+        d3.select("#analyze").style("display","none");
 
         //clear previous row data
         d3.select("div#select_option").html("").classed("set_browse_height set_div_height" , false)
@@ -157,13 +188,30 @@ $(document).ready(function(){
 
 
 
+//===================================================================================//
+//    Create events for the ANALYSIS option on the main page
+//==================================================================================//
+    $(document).on("click", "#analysis", function(){
+        //print clicked option
+        console.log("You clicked the option:", $(this).attr("id"));
 
+        //Make analysis report visible
+        d3.select("#analyze").style("display","block");
+        
+        //clear previous row data
+        d3.select("div#select_option").html("")
 
+        // set class false
+        d3.select("div#select_option").html("").classed("set_browse_height set_div_height" , false)
 
+        //Make prediction result invisible
+        d3.select("#predict").style("display","none");
+        
+        // Add anaysis.html to div container
+        // document.getElementById("analyze").innerHTML='<object type="text/html" data="./static/analysis.html" ></object>';
+        $("#analyze").load("./static/analysis.html");
 
-
-
-
+    }); // End of click analysis
 
 });//end of Jquery
 
