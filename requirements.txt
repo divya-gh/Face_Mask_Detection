@@ -32,8 +32,6 @@ Keras
 Keras-Preprocessing
 kiwisolver
 MarkupSafe
-mkl-random
-mkl-service
 oauthlib
 olefile
 opencv-python
