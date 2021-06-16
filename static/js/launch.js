@@ -9,12 +9,6 @@ function init() {
     //Make analysis report invisible
     d3.select("#analyze").style("display","none");
 
-    // Render selected Image for prediction
-    d3.json(`/get_image/people1.jpg`).then((data) => { 
-        console.log("Default Prediction Data:", data);
-
-    });
-
     // Disable camera
     d3.select("#livevideo").style("display","none");
       
