@@ -49,10 +49,6 @@ pyparsing
 pyreadline
 PySocks
 python-dateutil
-pytz
-pywin32
-PyYAML
-pyzmq
 requests-oauthlib
 scipy
 seaborn
