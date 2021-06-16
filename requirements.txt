@@ -32,7 +32,6 @@ Keras
 Keras-Preprocessing
 kiwisolver
 MarkupSafe
-mkl-fft
 mkl-random
 mkl-service
 oauthlib
