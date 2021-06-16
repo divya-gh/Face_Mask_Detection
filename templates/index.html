@@ -106,7 +106,7 @@
   <div class="row">        
     <div class="col-12 text-center">
       <h3 class="text-light text-center">Prediction Result</h3> 
-      <div class="container">
+      <div class="container-fluid">
         <div>
           <img id="predict_image" class="image-fluid w-100" src="./static/images/default_prediction.jpg">
         </div>
@@ -123,23 +123,12 @@
       <h3 class="text-light text-center">Live Streaming .....</h3> 
       <div class="container">
         <div>
-          <img class="border boder-4 border-primary" src="{{ url_for('video_feed') }}" width="75%">
+          <img id="show_camera" class="border boder-4 border-primary" src="{{url_for('video_feed')}}" width="75%">
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- <div id = "livevideo" class="col-lg-8  offset-lg-2">
-  <h3 class="mt-5">Live Streaming</h3>
-  {% if task == 'start_video' %}
-    <img src="{{ url_for('video_feed') }}" width="100%">
-  {% endif %}
-  <!-- {% if task == 'stop_video' %}
-    <img src="" width="100%">
-  {% endif %} -->
-  <!-- <img src="{{ url_for('video_feed') }}" width="100%"> -->
-</div> -->
 
 <!-- Create a row for Analysis -->
 <div id ="analysis-page" class="container set-display">
@@ -163,7 +152,7 @@
       <h2>Find Us On</h2>
       <div class="w-100 d-flex justify-content-center">
         <!-- add card group with 3 cards -->
-        <div class="  d-flex flex-nowrap border border-info border-2 p-4">
+        <div class="  d-flex flex-nowrap border border-info border-4 p-4">
           <a href="https://github.com/shaineb" alt="Shane"><div class="card find-card mt-5 mb-5 border border-0">
             <img class="card-img-top image-fluid pt-3 pl-3 pr-3 pb-1" src="./static/Images/git_b.png" alt="Card image cap">
             <div class="card-body p-1  text-info"> Shaine Balero</div>

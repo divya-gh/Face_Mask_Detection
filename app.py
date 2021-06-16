@@ -24,12 +24,13 @@ def index(task=""):
 
 @app.route("/get_image/<img>")
 def get_predicted_image(img):
+    cam = cv2.VideoCapture(0)
+    cam.release()
+    while True:
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            destroyAllWindows()
+            break
     print("image file rendered:",img)
-    cap = cv2.VideoCapture(0)
-    while(cap.isOpened()):
-        cap.release()
-        cv2.destroyAllWindows()
-        print("distroyed")
     data = gd.predicted_image(img)
     print(jsonify(data))
     return jsonify(data)

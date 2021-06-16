@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import time
 import imutils
 import os
+import time
 
 
 face_model = cv2.CascadeClassifier('./Resources/haarcascade_frontalface_default.xml')
@@ -17,7 +18,7 @@ model = load_model("./Saved_Model/keras_model.hdf5")
 def livePrediction():
     print("Streaming started")
     video_capture = cv2.VideoCapture(0)
-    
+
     mask_label = {0:'Mask Found',1:'No Mask Found'}
     color_label = {0:(0,255,0),1:(0,0,255)}
     # loop over frames from the video file stream
@@ -58,13 +59,8 @@ def livePrediction():
 
   
         # cv2.imshow("Frame", frame)
-        # if cv2.waitKey(1) & 0xFF == ord('q'):
-        #     break
-        key = cv2.waitKey(10)
-    
-        if key == 27: 
-            break
-    cap.release()
+
+    video_capture.release()
     cv2.destroyAllWindows()
 
     # return round(pred[0][0]*100)

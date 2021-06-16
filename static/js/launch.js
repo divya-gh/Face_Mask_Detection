@@ -17,6 +17,7 @@ function init() {
 
     // Disable camera
     d3.select("#livevideo").style("display","none");
+      
 
 
 }
@@ -155,9 +156,9 @@ $(document).ready(function(){
             //enent handing : get value on file upload
             browseForm.on("change" , () => {
                 console.log("get browsed file:", d3.event.target.value)
-
                 // get uploaded file path
-                var file = d3.event.target.value ;
+                var file = d3.event.target.value ;                
+
                 console.log("Uploaded file:", file.split("\\")[2])
 
                 var uploaded_File = file.split("\\")[2] ;
@@ -195,6 +196,11 @@ $(document).ready(function(){
 
         //clear previous row data
         d3.select("div#select_option").html("").classed("set_browse_height set_div_height" , false)
+
+        // var camera_selector= d3.select("#show_camera");
+        // camera_selector.attr("src", "{{ url_for('video_feed') | safe }}")
+        // console.log(camera_selector.attr('src'))
+
 
 
 

@@ -126,10 +126,8 @@ body {
 /* find-US settings */
 .line-set {
     position: relative;
-    margin-left:500px;
-    margin-right:450px;
-
-
+    margin-left:260px;
+    margin-right:250px;
 }
 
 .find-card {
@@ -178,7 +176,7 @@ body {
         font-weight: bold;
         height:25px;
     }
-}
+
 
 
 /* When your screen as more than 1000px */
@@ -198,6 +196,14 @@ body {
         font-weight: bold;
         height:25px;
     }
+
+    .line-set {
+        position: relative;
+        margin-left:350px;
+        margin-right:300px;
+    }
+
+    
 }
 
 
@@ -227,6 +233,12 @@ body {
         height:25px;
     }
 
+    .line-set {
+        position: relative;
+        margin-left:400px;
+        margin-right:380px;
+    }
+
 
 }
 
@@ -246,6 +258,13 @@ body {
     }
 
 
+    .line-set {
+        position: relative;
+        margin-left:480px;
+        margin-right:450px;
+    }
+
+
 }
 
  /* When your screen as more than 1450px */ 
@@ -262,10 +281,16 @@ body {
         font-weight: bold;
         height:25px;
     }
+
+    .line-set {
+        position: relative;
+        margin-left:700px;
+        margin-right:680px;
+    }
 }
 
 
-/* When your screen as less than 1550px */
+/* When your screen as less than 800px */
 @media screen and (max-width: 800px) { 
     .set-card-width {
          width:90px !important;
@@ -291,6 +316,24 @@ body {
     .find-card {
         position: relative;
       left:200px;
+    }
+
+    .line-set {
+        position: relative;
+        margin-left:250px;
+        margin-right:230px;
+    }
+
+}
+
+
+/* When your screen as less than 800px */
+@media screen and (max-width: 570px) { 
+
+    .line-set {
+        position: relative;
+        margin-left:100px;
+        margin-right:100px;
     }
 
 }
