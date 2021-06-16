@@ -19,7 +19,7 @@ def livePrediction():
     video_capture = cv2.VideoCapture(0)
     
     mask_label = {0:'Mask Found',1:'No Mask Found'}
-    color_label = {0:(0,255,0),1:(255,0,0)}
+    color_label = {0:(0,255,0),1:(0,0,255)}
     # loop over frames from the video file stream
     while True:
         # grab the frame from the threaded video stream
