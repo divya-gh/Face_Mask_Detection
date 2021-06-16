@@ -1,34 +1,23 @@
-absl-py @ file:///C:/ci/absl-py_1603889282672/work
-aiohttp @ file:///C:/ci/aiohttp_1602512552257/work
 astor
 async-timeout
-attrs @ file:///tmp/build/80754af9/attrs_1600298409949/work
 backcall
 blinker
 brotlipy
-cachetools @ file:///tmp/build/80754af9/cachetools_1596822027882/work
 certifi
-cffi @ file:///C:/ci/cffi_1600681203656/work
 chardet
 click
 cloudpickle
 colorama
-cryptography @ file:///C:/ci/cryptography_1601046909128/work
 cycler
 dataclasses
 decorator
 dm-tree
 Flask
 gast
-google-auth @ file:///tmp/build/80754af9/google-auth_1601995530934/work
-google-auth-oauthlib @ file:///tmp/build/80754af9/google-auth-oauthlib_1603929124518/work
 google-pasta
-grpcio @ file:///C:/ci/grpcio_1597406495377/work
 gunicorn
 h5py
-idna @ file:///tmp/build/80754af9/idna_1593446292537/work
 idna-ssl
-importlib-metadata @ file:///tmp/build/80754af9/importlib-metadata_1602276842396/work
 imutils
 install
 ipykernel
@@ -37,38 +26,28 @@ ipython-genutils
 itsdangerous
 jedi
 Jinja2
-joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
 jupyter-client
 jupyter-core
 Keras
-Keras-Applications @ file:///tmp/build/80754af9/keras-applications_1594366238411/work
-Keras-Preprocessing==1.1.0
+Keras-Preprocessing
 kiwisolver
-Markdown @ file:///C:/ci/markdown_1603216561566/work
 MarkupSafe
-matplotlib @ file:///C:/ci/matplotlib-base_1603357981283/work
 mkl-fft
 mkl-random
 mkl-service
-multidict @ file:///C:/ci/multidict_1600456490312/work
-numpy @ file:///C:/ci/numpy_and_numpy_base_1603480701039/work
 oauthlib
 olefile
 opencv-python
 opt-einsum
-pandas @ file:///C:/ci/pandas_1602088210462/work
 parso
 pickleshare
-Pillow @ file:///C:/ci/pillow_1603822370986/work
 prompt-toolkit
 protobuf
 psycopg2
 pyasn1
 pyasn1-modules
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
 Pygments
 PyJWT
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
 pyparsing
 pyreadline
 PySocks
@@ -77,29 +56,20 @@ pytz
 pywin32
 PyYAML
 pyzmq
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
 requests-oauthlib
-rsa @ file:///tmp/build/80754af9/rsa_1596998415516/work
-scikit-learn @ file:///C:/ci/scikit-learn_1598358870446/work
 scipy
 seaborn
 six
-SQLAlchemy @ file:///C:/ci/sqlalchemy_1598356696886/work
 tensorboard
 tensorboard-plugin-wit
 tensorflow
 tensorflow-estimator
 tensorflow-probability
 termcolor
-threadpoolctl @ file:///tmp/tmp9twdgx9k/threadpoolctl-2.1.0-py3-none-any.whl
 tornado
 traitlets
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
-urllib3 @ file:///tmp/build/80754af9/urllib3_1603305693037/work
 wcwidth
 Werkzeug
 win-inet-pton
 wincertstore
 wrapt
-yarl @ file:///C:/ci/yarl_1602696824692/work
-zipp @ file:///tmp/build/80754af9/zipp_1603306325174/work
