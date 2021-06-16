@@ -14,6 +14,11 @@ function init() {
         console.log("Default Prediction Data:", data);
 
     });
+
+    // Disable camera
+    d3.select("#livevideo").style("display","none");
+
+
 }
 
 // call init function
@@ -52,6 +57,9 @@ $(document).ready(function(){
 
         //Make analysis report invisible
          d3.select("#analyze").style("display","none");
+
+        // Disable camera
+        d3.select("#livevideo").style("display","none");
 
         //Get deafault image prediction
         // renderPredictedImage("people1.jpg");
@@ -128,6 +136,9 @@ $(document).ready(function(){
             //Ensure result is displayed 
             d3.select("#predict").style("display","block");
 
+            // Disable camera
+            d3.select("#livevideo").style("display","none");
+
             //Make analysis report invisible
             d3.select("#analyze").style("display","none");
 
@@ -174,14 +185,18 @@ $(document).ready(function(){
         //print clicked option
         console.log("You clicked the option:", $(this).attr("id"));
 
+        d3.select("#livevideo").style("display","block");
+
         //Ensure result is displayed 
-        d3.select("#predict").style("display","block");
+        d3.select("#predict").style("display","none");
 
         //Make analysis report invisible
         d3.select("#analyze").style("display","none");
 
         //clear previous row data
         d3.select("div#select_option").html("").classed("set_browse_height set_div_height" , false)
+
+
 
     });
 
@@ -194,6 +209,9 @@ $(document).ready(function(){
     $(document).on("click", "#analysis", function(){
         //print clicked option
         console.log("You clicked the option:", $(this).attr("id"));
+
+        // Disable camera
+        d3.select("#livevideo").style("display","none");
 
         //Make analysis report visible
         d3.select("#analyze").style("display","block");
@@ -212,6 +230,37 @@ $(document).ready(function(){
         $("#analyze").load("./static/analysis.html");
 
     }); // End of click analysis
+
+
+    //===================================================================================//
+//    Create events for the Find Us option on the main page
+//==================================================================================//
+// $(document).on("click", "#analysis", function(){
+//     //print clicked option
+//     console.log("You clicked the option:", $(this).attr("id"));
+
+//     // Disable camera
+//     d3.select("#livevideo").style("display","none");
+
+//     //Make analysis report visible
+//     d3.select("#analyze").style("display","block");
+    
+//     //clear previous row data
+//     d3.select("div#select_option").html("")
+
+//     // set class false
+//     d3.select("div#select_option").html("").classed("set_browse_height set_div_height" , false)
+
+//     //Make prediction result invisible
+//     d3.select("#predict").style("display","none");
+    
+//     // Add anaysis.html to div container
+//     // document.getElementById("analyze").innerHTML='<object type="text/html" data="./static/analysis.html" ></object>';
+//     $("#analyze").load("./static/analysis.html");
+
+// }); // End of click analysis
+
+
 
 });//end of Jquery
 

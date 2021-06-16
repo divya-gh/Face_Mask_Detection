@@ -115,6 +115,31 @@
   </div>
 </div>
 
+<!-- Camera -->
+
+<div id="livevideo" class="container-fluid" style="background-color:rgb(39, 37, 37);">
+  <div class="row">        
+    <div class="col-12 text-center">
+      <h3 class="text-light text-center">Live Streaming .....</h3> 
+      <div class="container">
+        <div>
+          <img class="border boder-4 border-primary" src="{{ url_for('video_feed') }}" width="75%">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div id = "livevideo" class="col-lg-8  offset-lg-2">
+  <h3 class="mt-5">Live Streaming</h3>
+  {% if task == 'start_video' %}
+    <img src="{{ url_for('video_feed') }}" width="100%">
+  {% endif %}
+  <!-- {% if task == 'stop_video' %}
+    <img src="" width="100%">
+  {% endif %} -->
+  <!-- <img src="{{ url_for('video_feed') }}" width="100%"> -->
+</div> -->
 
 <!-- Create a row for Analysis -->
 <div id ="analysis-page" class="container set-display">
