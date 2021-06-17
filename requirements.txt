@@ -11,11 +11,7 @@ Keras-Preprocessing
 opencv-python
 scipy
 seaborn
-tensorboard
-tensorboard-plugin-wit
-tensorflow
-tensorflow-estimator
-tensorflow-probability
+tensorflow-cpu
 tornado
 joblib
 MarkupSafe
