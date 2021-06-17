@@ -48,7 +48,7 @@ def livePrediction():
                 mask_result = model.predict(crop)
                 #print(color_label[round(mask_result[0][0])])
 
-                cv2.putText(frame,mask_label[round(mask_result[0][0])],(x, y-10), cv2.FONT_HERSHEY_SIMPLEX,2,color_label[round(mask_result[0][0])],3)
+                cv2.putText(frame,mask_label[round(mask_result[0][0])],(x, y-10), cv2.FONT_HERSHEY_SIMPLEX,1,color_label[round(mask_result[0][0])],2)
                 cv2.rectangle(frame,(x,y),(x+w,y+h), color_label[round(mask_result[0][0])],3)
 
         ret, buffer = cv2.imencode('.jpg', frame)
@@ -64,7 +64,7 @@ def livePrediction():
     
         if key == 27: 
             break
-    cap.release()
+    video_capture.release()
     cv2.destroyAllWindows()
 
     # return round(pred[0][0]*100)

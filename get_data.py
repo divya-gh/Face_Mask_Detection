@@ -105,7 +105,9 @@ def predicted_image(img_file ="people1.jpg"):
     #print("img_file", img_file)
     experiment_images = ["people1.jpg", "people2.jpg", "people3.jpg", "people4.jpg", "people5.jpg", "people6.jpg", "people7.jpg"]
     if img_file not in experiment_images:
-        base_path = "./Resources/UploadPic/"
+    # --------- TODO Copy to Main ------------- #
+        base_path = "./static/upload/"
+    # --------- Copy to Main ------------- #
     else:
         base_path = "./Resources/Experiment/"
     img_path = base_path +  img_file
