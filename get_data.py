@@ -1,7 +1,7 @@
 # Loading all images using imread from a given folder
 import cv2
 import os
-from PIL import Image
+# from PIL import Image
 import json
 #clear Screen
 os.system("cls")
@@ -13,7 +13,7 @@ from scipy.spatial import distance
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
-import imutils
+# import imutils
 
 
 face_model = cv2.CascadeClassifier('./Resources/haarcascade_frontalface_default.xml')
@@ -28,7 +28,7 @@ def prediction(path):
     sample_img = np.reshape(sample_img,[1,128,128,3])
     sample_img = sample_img/255.0
     pred = model.predict(sample_img)
-    print(pred)   
+    #print(pred)   
 
     # Uing Opencv2 to find social distancing and show mask prediction on the image
     mask_label = {0:'Mask Found',1:'No Mask Found'}
@@ -37,7 +37,7 @@ def prediction(path):
 
     # convert Image to grayscale for object identification
     img = cv2.cvtColor(img, cv2.IMREAD_GRAYSCALE)
-    faces = face_model.detectMultiScale(img,scaleFactor=1.1, minNeighbors=4,minSize=(60, 60))
+    faces = face_model.detectMultiScale(img,scaleFactor=1.2, minNeighbors=4)
 
     #check for no. of faces in the image
     # if more than one face found,
@@ -115,7 +115,7 @@ def livePrediction():
                 mask_result = model.predict(crop)
                 #print(color_label[round(mask_result[0][0])])
 
-                cv2.putText(frame,mask_label[round(mask_result[0][0])],(x, y-10), cv2.FONT_HERSHEY_SIMPLEX,2,color_label[round(mask_result[0][0])],3)
+                cv2.putText(frame,mask_label[round(mask_result[0][0])],(x, y-10), cv2.FONT_HERSHEY_SIMPLEX,1,color_label[round(mask_result[0][0])],2)
                 cv2.rectangle(frame,(x,y),(x+w,y+h), color_label[round(mask_result[0][0])],3)
 
         ret, buffer = cv2.imencode('.jpg', frame)
@@ -125,9 +125,14 @@ def livePrediction():
 
   
         # cv2.imshow("Frame", frame)
-
-    # video_capture.release()
-    # cv2.destroyAllWindows()
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+        #     break
+        key = cv2.waitKey(10)
+    
+        if key == 27: 
+            break
+    video_capture.release()
+    cv2.destroyAllWindows()
 
     # return round(pred[0][0]*100)
 
@@ -153,18 +158,18 @@ def get_sel_images():
     return images
 
 # predict  function   
-def predicted_image(img_file ="people1.jpg"):
-    #print("img_file", img_file)
-    experiment_images = ["people1.jpg", "people2.jpg", "people3.jpg", "people4.jpg", "people5.jpg", "people6.jpg", "people7.jpg"]
-    if img_file not in experiment_images:
-        base_path = "./Resources/UploadPic/"
-    else:
-        base_path = "./Resources/Experiment/"
-    img_path = base_path +  img_file
-    #print("path:", img_path)
-    data = prediction(img_path)
-    #print("data", data)
-    return data
+# def predicted_image(img_file):
+#     #print("img_file", img_file)
+#     experiment_images = ["people1.jpg", "people2.jpg", "people3.jpg", "people4.jpg", "people5.jpg", "people6.jpg", "people7.jpg"]
+#     if img_file not in experiment_images:
+#         base_path = "./Resources/UploadPic/"
+#     else:
+#         base_path = "./Resources/Experiment/"
+#     img_path = base_path + img_file
+#     print("path:", img_path)
+#     data = prediction(img_path)
+#     #print("data", data)
+#     return data
 
 
 
