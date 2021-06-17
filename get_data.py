@@ -17,7 +17,7 @@ import imutils
 
 
 face_model = cv2.CascadeClassifier('./Resources/haarcascade_frontalface_default.xml')
-model = load_model("./Model_Train_Test/Best/keras_model.hdf5")
+model = load_model("./Model_Train_Test/keras_model.hdf5")
 
 def prediction(path):
 
@@ -37,8 +37,7 @@ def prediction(path):
 
     # convert Image to grayscale for object identification
     img = cv2.cvtColor(img, cv2.IMREAD_GRAYSCALE)
-    faces = face_model.detectMultiScale(img,scaleFactor=1.1, minNeighbors=4,minSize=(60, 60),
-                                         flags=cv2.CASCADE_SCALE_IMAGE)
+    faces = face_model.detectMultiScale(img,scaleFactor=1.1, minNeighbors=4,minSize=(60, 60))
 
     #check for no. of faces in the image
     # if more than one face found,
@@ -177,5 +176,5 @@ if __name__ == "__main__":
    
     images = get_sel_images()
     #print(images)
-    img_file = predicted_image("people1.jpg")
-    # print(img_file)
+    img_file = predicted_image("people4.jpg")
+    print(img_file)

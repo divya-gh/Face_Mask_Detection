@@ -1,7 +1,7 @@
 #Import necessary libraries
 from flask import Flask, render_template, Response, jsonify
 import cv2
-import get_data as gd
+from get_data import predicted_image, get_sel_images
 from get_data import livePrediction
 
 
@@ -19,14 +19,14 @@ def index(task=""):
 @app.route("/get_image/<img>")
 def get_predicted_image(img):
     print("image file rendered:",img)
-    data = gd.predicted_image(img)
+    data = predicted_image(img)
     print(jsonify(data))
     return jsonify(data)
 
 # app route for image file selection
 @app.route("/api/v1.0/select_option")
 def get_selected_images():    
-    img_files = gd.get_sel_images()
+    img_files = get_sel_images()
     return jsonify(img_files)
 
 
