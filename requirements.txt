@@ -21,7 +21,6 @@ joblib
 MarkupSafe
 numpy
 pandas
-python
 python-dotenv
 pytz
 six
