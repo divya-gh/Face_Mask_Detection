@@ -4,14 +4,14 @@
 ![GitHub commits count](https://img.shields.io/github/last-commit/divya-gh/Face_Mask_Detection?style=for-the-badge)
 
 
-![Banner](README_Images/project_banner.gif)
+![Banner](/Images/project_banner.gif)
 
 
 
 
 # Inspiration:
 <b/>
-<a href="https:github.com/nadiaaldrich/project_3/main/README_Images/covid-icon2.png"><img width="100" align='left' src="README_Images/covid-icon2.png?raw=true"></a>
+<a href="https:github.com/nadiaaldrich/project_3/main/README_Images/covid-icon2.png"><img width="100" align='left' src="Images/covid-icon2.png?raw=true"></a>
 
 ## <p style="font-size:700%;">In San Antonio, the coronavirus pandemic officially began on March 2020 and by April 2020, the CDC began recommending face mask to help slow the spread of the virus. Since then, we have all, at one point or another, been subject to wearing a face mask.</p>
 
