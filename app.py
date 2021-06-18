@@ -19,12 +19,12 @@ def predicted_image(img_file):
     experiment_images = ["people1.jpg", "people2.jpg", "people3.jpg", "people4.jpg", "people5.jpg", "people6.jpg", "people7.jpg"]
     if img_file not in experiment_images:
     # --------- TODO Copy to Main ------------- #
-        # base_path = "./static/upload/"
+        base_path = "./static/upload/"
     # --------- Copy to Main ------------- #
-        base_path = "./Resources/UploadPic/"
+        # base_path = "./Resources/UploadPic/"
     else:
         base_path = "./Resources/Experiment/"
-    img_path = base_path + img_file
+    img_path = base_path + f"{img_file}"
     print("path:", img_path)
     data = prediction(img_path)
     #print("data", data)
@@ -35,7 +35,7 @@ def predicted_image(img_file):
 # --------- TODO Copy to Main ------------- #
 UPLOAD_FOLDER = './static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
+# app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png']
 
 def validate_image(stream):

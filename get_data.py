@@ -1,7 +1,7 @@
 # Loading all images using imread from a given folder
 import cv2
 import os
-# from PIL import Image
+from PIL import Image
 import json
 #clear Screen
 os.system("cls")
@@ -23,11 +23,13 @@ def prediction(path):
 
     # get Image from the path rendered
     img = cv2.imread(path)   
+    # height, width, channels = img.shape
+    # print( height, width, channels)
     # Make predictions on the testing set
-    sample_img = cv2.resize(img,(128,128))
-    sample_img = np.reshape(sample_img,[1,128,128,3])
-    sample_img = sample_img/255.0
-    pred = model.predict(sample_img)
+    # sample_img = cv2.resize(img,(128,128))
+    # sample_img = np.reshape(sample_img,[1,128,128,3])
+    # sample_img = sample_img/255.0
+    # pred = model.predict(sample_img)
     #print(pred)   
 
     # Uing Opencv2 to find social distancing and show mask prediction on the image
@@ -157,21 +159,6 @@ def get_sel_images():
     #print(images)
     return images
 
-# predict  function   
-# def predicted_image(img_file):
-#     #print("img_file", img_file)
-#     experiment_images = ["people1.jpg", "people2.jpg", "people3.jpg", "people4.jpg", "people5.jpg", "people6.jpg", "people7.jpg"]
-#     if img_file not in experiment_images:
-#         base_path = "./Resources/UploadPic/"
-#     else:
-#         base_path = "./Resources/Experiment/"
-#     img_path = base_path + img_file
-#     print("path:", img_path)
-#     data = prediction(img_path)
-#     #print("data", data)
-#     return data
-
-
 
 
         
@@ -181,5 +168,6 @@ if __name__ == "__main__":
    
     images = get_sel_images()
     #print(images)
-    img_file = predicted_image("people4.jpg")
-    print(img_file)
+    # img_file = predicted_image("people4.jpg")
+    # print(img_file)
+    # prediction("./static/upload/59.jpg")
