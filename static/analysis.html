@@ -42,10 +42,10 @@
                         <footer class="blockquote-footer"> <cite href="https://machinelearningmastery.com/what-is-computer-vision/" title="Source Title">Page ix, Programming Computer Vision with Python, 2012</cite></footer>
                       </blockquote>
                       <h4 class="a-h1">Introduction to Computer Vision</h4>
-                    <div class="mt-3">
+                    <div class="mt-3 pt-3">
                         <h6 class="text-secondary">Why VGG-16?</h6>
                         <p>We tested our dataset with two other TensorFlow Keras models and found that VGG-16 had better value loss over training loss. </p>
-                    <h6 class="text-secondary">Objective: </h6>
+                    <h6 class="text-secondary pt-3 ">Objective: </h6>
                       <ul>
                         <li>Detect face masks in images selected</li>
                         <li>Detect face masks in images uploaded</li>
@@ -56,12 +56,12 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="text-center">
-                            <h5 class="text-center text-secondary">VGG-19</h5>
+                            <h5 class="text-center text-primary">VGG-19</h5>
                             <img src="./static/Images/vgg16.png" class="image-fluid w-100" height="330px">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <h5 class="text-center text-secondary">Convolutional Network for Classification and Detection</h5>
+                        <h5 class="text-center text-primary">Convolutional Network for Classification and Detection</h5>
                         <div class="mt-4">
                             <p><strong class="text-secondary">Model: </strong>Very Deep Convolutional Networks for Large-Scale Image Recognition proposed by K. Simonyan and A. Zisserman from the University of Oxford</p>
                             <p><strong class="text-secondary">ImageNet Dataset: </strong>The model achieves 92.7% top-5 test accuracy in ImageNet, which is a dataset of over 14 million images belonging to 1000 classes.</p>
@@ -72,7 +72,7 @@
                 </div>
                 <h4 class="mt-4 a-h1">Data loading and Visualization</h4>
                 <div class="row">                    
-                    <div class="col-4">
+                    <div class="col-4 border border border-1">
                         <!-- <div class="mt-4"> -->
                             <h6 class="w-100 text-secondary">Folder Structure: </h6>
                             <ul>
@@ -97,11 +97,11 @@
                             </ul>
                         <!-- </div>                             -->
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 border border-1">
                         <h6 class="text-secondary">Dataframe:</h6>
                             <img src="./static/Images/dataframe.png" class="image-fluid w-100" >
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 border border-1">
                         <img src="./static/Images/barchart.jpg" class="image-fluid w-100" >
                     </div>
                 </div>   
@@ -113,7 +113,9 @@
                 <div class="ml-4 mr-4">
                     <p>We built our VGG-19 model with Keras Sequential CNN model with various layers such as Flatten and Dense with activation <em>'softMax'</em>. We used the <em>'RMSProp'</em> optimizer and <em>‘binary_crossentropy’</em> as our loss function to address the two classes. </p>
                     <p><strong>Test Accuracy: </strong>After 33 epochs, our model achieved the test accuracy of 92%</p>
-                    <img src="./static/Images/Test_accuracy.png" class="image-fluid w-50" >
+                    <div class="d-flex justify-content-center">                    
+                    <br><img src="./static/Images/Test_accuracy.png" class="image-fluid w-50 " >
+                    </div>
                 </div> 
                 <h4 class="mt-4 a-h1">Model Accuracy and Loss</h4> 
                 <div class="row">
@@ -129,7 +131,7 @@
                     <div class="row">
                         <div class="col-6">
                             <h4 class="a-h1">Face detection and Mask prediction of an Image</h4>
-                            <img src="./static/Images/analysis_prediction.png" class="image-fluid w-100" >
+                            <img src="./static/Images/analysis_prediction.png" class="image-fluid w-100 pt-3" >
                         </div>
                         <div class="col-6">
                             <h4 class="a-h1">Face detection and Mask prediction real-time</h4>
