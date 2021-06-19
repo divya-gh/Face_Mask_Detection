@@ -39,10 +39,12 @@ Options | Description
 ---
 
 # Why use a face mask detector?
-## - To automate face mask checks.
-## - Establish accurate predictions of mask use in state inspections
+## - Airports can use it in combination with CCTV to check if travelers are complying with face mask rules. 
 ## - Hospitals & healthcare could use its application to better enforce mask use.
 ![Icon](https://github.com/nadiaaldrich/project_3/blob/190e95de6f04449c35960b96a1c7832212cc6835/README_Images/robot.jpeg
 )
+---
+# Requirements: 
+-
 
  
