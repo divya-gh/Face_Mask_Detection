@@ -44,7 +44,12 @@ Options | Description
 ![Icon](https://github.com/nadiaaldrich/project_3/blob/190e95de6f04449c35960b96a1c7832212cc6835/README_Images/robot.jpeg
 )
 ---
-# Requirements: 
--
+# Project Requirements: 
+- Tensorflow 
+- Flask App 
+- Open CV
+- HAAR Cascade
+
+
 
  
