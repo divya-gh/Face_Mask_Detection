@@ -17,7 +17,7 @@
 
 
 
-## [***Click here for a full timeline.***](https://www.texastribune.org/2020/07/31/coronavirus-timeline-texas/https://www.texastribune.org/2020/07/31/coronavirus-timeline-texas/)
+## [***Click here for a full timeline.***](https://www.texastribune.org/2020/07/31/coronavirus-timeline-texas/)
 
 
 ---
