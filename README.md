@@ -46,6 +46,7 @@ Options | Description
 ---
 # Project Requirements: 
 - Tensorflow 
+- VGGNET
 - Flask App 
 - Open CV
 - HAAR Cascade
